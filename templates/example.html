@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .modal-container {
+            background: rgba(0,0,0,.5);
+  display: none;
+  /* this is how we cover the entire page */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+        </style>
+        <script scr="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+            const modal = document.getElementById('modal')
+
+//Show modal
+            open.addEventListener('click', () => {
+            modal.classList.add('show-modal')       
+            })
+
+//Hide modal
+            close.addEventListener('click', () => {
+            modal.classList.remove('show-modal')
+            })
+        </script>
+    </head>
+    <body>
+        <div class="modal-container" id="modal">
+            <div class="modal">
+              <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+              </button>
+              <div class="modal-header">
+                <h3>Sign Up</h3>
+              </div>
+              <div class="modal-content">
+                <p>Register with us to get offers, support and more</p>
+                <form class="modal-form">
+                  <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Name" class="form-input">
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter email" class="form-input">
+                  </div>
+                  <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" class="form-input">
+                  </div>
+                  <div>
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" placeholder="Confirm password" class="form-input">
+                  </div>
+        
+                  <input type="submit" value="submit" class="submit-btn">
+                </form>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
